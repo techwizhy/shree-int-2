@@ -3,6 +3,8 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
+  initRevealOnScroll();
   initStickyHeader();
   initMobileMenu();
   initCustomCursor();
@@ -637,3 +639,49 @@ function initTestimonialsSlider() {
     });
   }
 }
+
+/* ------------------------------------------------------------
+   14. Minimalist Preloader
+   ------------------------------------------------------------ */
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  // Gracefully fade out preloader on window load
+  window.addEventListener('load', () => {
+    preloader.classList.add('preloader--hidden');
+  });
+
+  // Fallback: fade out after 2.5 seconds in case load event does not fire
+  setTimeout(() => {
+    preloader.classList.add('preloader--hidden');
+  }, 2500);
+}
+
+/* ------------------------------------------------------------
+   15. Reveal on Scroll (Intersection Observer)
+   ------------------------------------------------------------ */
+function initRevealOnScroll() {
+  const revealElements = document.querySelectorAll('.reveal-up, .reveal-fade');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        if (element.classList.contains('reveal-up')) {
+          element.classList.add('reveal-up--active');
+        } else {
+          element.classList.add('reveal-fade--active');
+        }
+        observer.unobserve(element);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
