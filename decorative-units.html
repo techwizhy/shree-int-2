@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorative Units Designs — Shree Interior</title>
+  <meta name="description" content="Explore beautiful foyer partitions, modern mandir layouts, and vanity counters by Shree Interior in Vellore & Chennai.">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  
+  <style>
+    .portfolio-content {
+      padding-top: 140px;
+      padding-bottom: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .portfolio-grid .gallery__card {
+      width: 100% !important;
+      max-width: 380px;
+      height: 450px !important;
+      margin: 0 auto;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    @media (max-width: 1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 767px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-grid .gallery__card {
+        height: 380px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Custom Cursor (Desktop Only) -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- 3. Header -->
+  <header class="header">
+    <div class="header__container container">
+      <a href="index.html" class="header__logo">
+        <img src="assets/images/logo.svg" alt="Shree Interior" class="header__logo-img">
+      </a>
+      
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="nav__item-wrapper">
+            <a href="index.html" class="nav__item">Home</a>
+          </li>
+          <li class="nav__item-wrapper nav__item--has-dropdown">
+            <span class="nav__item">Products <span class="nav__arrow">▼</span></span>
+            <ul class="header__dropdown">
+              <li><a href="modular-kitchen.html">Modular Kitchen</a></li>
+              <li><a href="bedroom.html">Bedroom</a></li>
+              <li><a href="dining-room.html">Dining Room</a></li>
+              <li><a href="kids-room.html">Kids Room</a></li>
+              <li><a href="living-room.html">Living Room</a></li>
+              <li><a href="decorative-units.html">Decorative Units</a></li>
+            </ul>
+          </li>
+          <li class="nav__item-wrapper">
+            <a href="portfolio.html" class="nav__item">Portfolio</a>
+          </li>
+          <li class="nav__item-wrapper">
+            <a href="blogs.html" class="nav__item">Blogs</a>
+          </li>
+          <li class="nav__item-wrapper">
+            <a href="faqs.html" class="nav__item">FAQ's</a>
+          </li>
+          <li class="nav__item-wrapper">
+            <a href="contact.html" class="nav__item">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <button class="header__cta-btn" data-modal-trigger>Get Free Estimate</button>
+      
+      <button class="header__hamburger" aria-label="Toggle Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 4. Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer__content">
+      <div class="mobile-drawer__header">
+        <a href="index.html" class="mobile-drawer__logo">
+          <img src="assets/images/logo.svg" alt="Shree Interior" class="mobile-drawer__logo-img">
+        </a>
+      </div>
+      
+      <nav class="mobile-drawer__nav">
+        <ul class="mobile-drawer__list">
+          <li><a href="index.html">Home</a></li>
+          <li class="mobile-drawer__item--has-accordion">
+            <button class="mobile-drawer__products-toggle">Products <span class="nav__arrow">▼</span></button>
+            <ul class="mobile-drawer__products-list">
+              <li><a href="modular-kitchen.html">Modular Kitchen</a></li>
+              <li><a href="bedroom.html">Bedroom</a></li>
+              <li><a href="dining-room.html">Dining Room</a></li>
+              <li><a href="kids-room.html">Kids Room</a></li>
+              <li><a href="living-room.html">Living Room</a></li>
+              <li><a href="decorative-units.html">Decorative Units</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="faqs.html">FAQ's</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mobile-drawer__actions">
+        <a href="https://wa.me/919600228269?text=Hi%20Shree%20Interior%2C%20I%27d%20like%20to%20discuss%20an%20interior%20project..." class="mobile-action-btn mobile-action-btn--whatsapp" target="_blank" rel="noopener">
+          <svg class="mobile-action-btn__icon" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.424 2.5 1.145 3.473L6.5 20.5l5.241-1.375c.953.52 2.044.814 3.206.814 3.18 0 5.767-2.586 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766h.084zm3.966 8.358c-.167.472-.82.862-1.347.973-.362.076-.833.141-2.42-.516-2.029-.838-3.329-2.91-3.429-3.045-.102-.136-.827-.968-.827-1.847 0-.88.46-1.312.626-1.488.166-.176.362-.22.482-.22h.346c.108 0 .253-.04.397.302.15.358.513 1.25.558 1.342.045.093.076.2.015.321-.061.12-.09.196-.181.302-.09.106-.19.237-.272.317-.09.088-.184.184-.08.362.105.18.468.77.998 1.242.684.608 1.26.797 1.439.886.18.09.284.076.39-.045.105-.12.459-.533.58-.714.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.136.346.216.046.08.046.463-.121.935v.002z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <a href="mailto:godrejinteriovellore@gmail.com" class="mobile-action-btn mobile-action-btn--email">
+          <svg class="mobile-action-btn__icon" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Email Us
+        </a>
+        <button class="mobile-action-btn mobile-action-btn--estimate" data-modal-trigger>
+          Get Free Estimate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Side Rail -->
+  <div class="side-rail">
+    <a href="https://wa.me/919600228269?text=Hi%20Shree%20Interior%2C%20I%27d%20like%20to%20discuss%20an%20interior%20project..." class="side-rail__link side-rail__link--whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <span class="pulse-glow"></span>
+      <span class="pulse-glow"></span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.424 2.5 1.145 3.473L6.5 20.5l5.241-1.375c.953.52 2.044.814 3.206.814 3.18 0 5.767-2.586 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766h.084zm3.966 8.358c-.167.472-.82.862-1.347.973-.362.076-.833.141-2.42-.516-2.029-.838-3.329-2.91-3.429-3.045-.102-.136-.827-.968-.827-1.847 0-.88.46-1.312.626-1.488.166-.176.362-.22.482-.22h.346c.108 0 .253-.04.397.302.15.358.513 1.25.558 1.342.045.093.076.2.015.321-.061.12-.09.196-.181.302-.09.106-.19.237-.272.317-.09.088-.184.184-.08.362.105.18.468.77.998 1.242.684.608 1.26.797 1.439.886.18.09.284.076.39-.045.105-.12.459-.533.58-.714.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.136.346.216.046.08.046.463-.121.935v.002z"/>
+      </svg>
+    </a>
+    <a href="mailto:godrejinteriovellore@gmail.com" class="side-rail__link side-rail__link--email" aria-label="Send Email">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    </a>
+    <button class="side-rail__estimate" data-modal-trigger>
+      Free Estimate
+    </button>
+  </div>
+
+  
+  
+  <main class="portfolio-content container">
+    <h1 style="text-align: center; margin-bottom: 12px; color: var(--brand-blue); font-size: 2.8rem; font-weight: 700;">Decorative Units Designs</h1>
+    <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted); max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.05rem; line-height: 1.7;">
+      Custom foyer partitions, designer shoe cabinets, modern mandir designs, and sleek vanity consoles.
+    </p>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_7.jpg" alt="Designer Foyer & Partition" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Designer Foyer & Partition</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_8.jpg" alt="Custom Console Table" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Custom Console Table</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_9.jpg" alt="Modern Mandir Unit" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Modern Mandir Unit</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_6.jpg" alt="Sleek Shoe Rack & Foyer" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Sleek Shoe Rack & Foyer</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_3.jpg" alt="Luxury Vanity Console" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Luxury Vanity Console</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="gallery__card">
+        <img src="assets/images/portfolio/img_10.jpg" alt="Custom Wall Shelf & Console" loading="lazy">
+        <div class="gallery__overlay">
+          <h3 class="gallery__name">Custom Wall Shelf & Console</h3>
+          <span class="gallery__category">Decorative</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <!-- 16. Footer (Timeline footnote appended at bottom) -->
+  <footer class="footer" id="footer">
+    <div class="footer__top container">
+      <!-- Logo removed in footer as requested -->
+      <p class="footer__tagline" style="font-size: 1.15rem; font-weight: 600; letter-spacing: 1px;">Your Creative Space...</p>
+    </div>
+    
+    <div class="footer__grid container">
+      <!-- Col 1 Offices -->
+      <div class="footer__col footer__offices">
+        <h3 class="footer__heading">Our Offices</h3>
+        <p class="footer__office-item">
+          <strong>Vellore Head Office:</strong><br>
+          NO:38/48, Katpadi Main Road, Thirunagar,<br>
+          Vellore – 632006.<br>
+          Tel: <a href="tel:04162248327">0416-2248327</a>
+        </p>
+        <p class="footer__office-item">
+          <strong>Chennai Branch Office:</strong><br>
+          G-2 Wellington Estate, NO:53 Ethiraj Salai,<br>
+          Egmore, Chennai – 600008.<br>
+          Tel: <a href="tel:04428222200">044-28222200</a>
+        </p>
+        <p class="footer__office-item">
+          <strong>Hours:</strong> Mon - Sat: 10:00 AM – 7:00 PM
+        </p>
+      </div>
+      
+      <!-- Col 2 Quick Links -->
+      <div class="footer__col footer__links">
+        <h3 class="footer__heading">Quick Links</h3>
+        <ul class="footer__nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="faqs.html">FAQ's</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Col 3 Products -->
+      <div class="footer__col footer__products">
+        <h3 class="footer__heading">Products</h3>
+        <ul class="footer__nav-list">
+          <li><a href="modular-kitchen.html">Kitchen</a></li>
+          <li><a href="bedroom.html">Bedroom</a></li>
+          <li><a href="dining-room.html">Dining Room</a></li>
+          <li><a href="kids-room.html">Kids Room</a></li>
+          <li><a href="living-room.html">Living Room</a></li>
+          <li><a href="decorative-units.html">Decorative Units</a></li>
+        </ul>
+      </div>
+      
+      <!-- Col 4 Contact & Socials -->
+      <div class="footer__col footer__contact">
+        <h3 class="footer__heading">Get in Touch</h3>
+        <p class="footer__contact-item">
+          Email: <a href="mailto:godrejinteriovellore@gmail.com">godrejinteriovellore@gmail.com</a>
+        </p>
+        <p class="footer__contact-item">
+          Phone: <a href="tel:+919600228269">+91 96002 28269</a>
+        </p>
+        
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Relocated timeline footnote here -->
+    <div class="footer__footnote container text-center">
+      <p>*Timeline may vary based on project scope, layout complexity, and material selections.</p>
+    </div>
+    
+    <div class="footer__bottom container">
+      <div class="footer__bottom-flex">
+        <p>© 2026 Shree Interior. All rights reserved. | Designed with ♥ for your dream spaces.</p>
+        <div class="footer__policy-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms & Conditions</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 17. Enquiry Modal -->
+  <div class="modal" id="enquiryModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2>Book Free Consultation</h2>
+        <button class="modal__close" aria-label="Close Modal">&times;</button>
+      </div>
+      
+      <div class="modal__form-fields">
+        <form class="modal__form" id="enquiryForm">
+          <div class="form-group">
+            <label for="clientName">Name *</label>
+            <input type="text" id="clientName" required placeholder="Enter your full name">
+          </div>
+          
+          <div class="form-group">
+            <label for="clientPhone">Phone Number *</label>
+            <input type="tel" id="clientPhone" required placeholder="Enter 10-digit mobile number">
+          </div>
+          
+          <div class="form-group">
+            <label for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" placeholder="Enter your email address">
+          </div>
+          
+          <div class="form-group">
+            <label for="projectInterest">Interested In *</label>
+            <select id="projectInterest" required>
+              <option value="" disabled selected>Select service</option>
+              <option value="Kitchen">Modular Kitchen</option>
+              <option value="Bedroom">Bedroom Design</option>
+              <option value="Dining Room">Dining Room Design</option>
+              <option value="Living Room">Living Room Design</option>
+              <option value="Kids Room">Kids Room Design</option>
+              <option value="Decorative Units">Decorative Units</option>
+              <option value="Not Sure">Not Sure / Complete Home</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="projectCity">Your City *</label>
+            <select id="projectCity" required>
+              <option value="" disabled selected>Select location</option>
+              <option value="Vellore">Vellore</option>
+              <option value="Chennai">Chennai</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="clientMessage">Message / Brief Requirements</label>
+            <textarea id="clientMessage" rows="3" placeholder="Tell us briefly about your dream home..."></textarea>
+          </div>
+          
+          <button type="submit" class="modal__submit-btn">Submit Enquiry</button>
+        </form>
+      </div>
+      
+      <div class="modal__success">
+        <svg class="modal__success-icon" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#F26522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3>Thank You!</h3>
+        <p>Your enquiry has been received successfully. Our design consultant will call you within 24 hours to schedule your free consultation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 18. Scroll-to-Top Button -->
+  <div class="scroll-top" id="scrollTop">
+    <div class="scroll-top__fill" id="scrollTopFill"></div>
+    <svg class="scroll-top__svg" viewBox="0 0 48 48">
+      <circle class="scroll-top__track" cx="24" cy="24" r="20" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+    </svg>
+    <span class="scroll-top__arrow">↑</span>
+  </div>
+
+  <!-- 19. Promotional Bottom Popup Bar -->
+  <div class="promo-popup" id="promoPopup">
+    <div class="promo-popup__content">
+      <button class="promo-popup__close" id="promoClose" aria-label="Close promotion">&times;</button>
+      <p class="promo-popup__text">Get a free interior design consultation — no obligation.</p>
+      <button class="btn btn-primary promo-popup__btn" data-modal-trigger>Book Free Consultation</button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150" width="260" height="150">
+  <!-- White Stylized Monogram S -->
+  <path d="M 130,12 C 143,12 151,18 150.3,26 L 136.5,26 C 136.5,21.5 133.8,18.5 129.2,18.5 C 124.7,18.5 121.8,20.8 121.8,24.2 C 121.8,27.8 124.7,29.7 133.1,32.1 C 146.2,35.6 152.7,41.0 152.7,52.1 C 152.7,63.8 143.8,70.5 130,70.5 C 114.5,70.5 105.8,63.4 106.6,52.9 L 121.1,52.9 C 121.1,58.7 124.7,63.1 130,63.1 C 135.3,63.1 138.1,59.8 138.1,56.3 C 138.1,51.8 135.1,50.0 126.3,47.5 C 113.4,43.9 107.2,38.7 107.2,27.7 C 107.2,16.4 116.1,12 130,12 Z" fill="#FFFFFF"/>
+
+  <!-- White Lotus Flower Outlines -->
+  <g stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Center Petal -->
+    <path d="M 130,98 C 130,98 122,83 130,73 C 138,83 130,98 130,98 Z"/>
+    <!-- Left Inner Petal -->
+    <path d="M 130,98 C 130,98 114,86 118,74.5 C 126,81.5 130,98 130,98 Z"/>
+    <!-- Left Outer Petal -->
+    <path d="M 130,98 C 130,98 94,92 103,81 C 115,86.5 130,98 130,98 Z"/>
+    <!-- Right Inner Petal -->
+    <path d="M 130,98 C 130,98 146,86 142,74.5 C 134,81.5 130,98 130,98 Z"/>
+    <!-- Right Outer Petal -->
+    <path d="M 130,98 C 130,98 166,92 157,81 C 145,86.5 130,98 130,98 Z"/>
+  </g>
+
+  <!-- Left Lotus White Dot -->
+  <circle cx="94" cy="88" r="4.5" fill="#FFFFFF"/>
+
+  <!-- Futuristic Sci-fi White Text Wordmark -->
+  <text x="130" y="125" font-family="'Century Gothic', 'Arial Black', sans-serif" font-size="14.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2.5">SHREE INTERIOR</text>
+</svg>
