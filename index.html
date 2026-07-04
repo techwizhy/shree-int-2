@@ -237,87 +237,136 @@
   <!-- Main Content Wrap for Semantic HTML / SEO -->
   <main>
 
-  <!-- 6. Hero Section (Re-structured to premium 2-column layout to fill the right half) -->
-  <section id="hero" class="hero">
-    <div class="hero__container container">
-      <div class="hero__grid-layout">
-        
-        <!-- Left Column: Text Content and Stats -->
-        <div class="hero__text-col">
-          <h1 class="hero__headline">
-            PROFESSIONAL HOME <span class="hero__color-cycle">INTERIOR DESIGN</span> COMPANY
-          </h1>
-          <p class="hero__subtitle">
-            Transform your home into a masterpiece of comfort and elegance. <strong>Your Creative Space...</strong> begins with Shree Interior.
-          </p>
-          
-          <!-- Animated Stats Badges -->
-          <div class="hero__stats">
-            <div class="hero__stat">
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="2006">0</span>
-              </span>
-              <span class="hero__stat-label">Since</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="20">0</span><span class="hero__stat-suffix">+</span>
-              </span>
-              <span class="hero__stat-label">Years Exp</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="5">0</span><span class="hero__stat-suffix"> Yrs</span>
-              </span>
-              <span class="hero__stat-label">Warranty</span>
-            </div>
-            <div class="hero__stat">
-              <!-- changed from 45 to 40 days as requested -->
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="40">0</span><span class="hero__stat-suffix"> Days*</span>
-              </span>
-              <span class="hero__stat-label">Completion</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="10">0</span><span class="hero__stat-suffix">+</span>
-              </span>
-              <span class="hero__stat-label">Projects / month</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value-wrapper">
-                <span class="hero__stat-value" data-target="2">0</span>
-              </span>
-              <span class="hero__stat-label">Offices</span>
-            </div>
-          </div>
+  <!-- 6. Hero Section (Ultra Premium Cinematic Glassmorphic Hero with Responsive Art Direction) -->
+  <section id="hero" class="hero-cinematic">
+    <!-- Dynamic Cinematic Background Image Wrapper with Art Direction -->
+    <div class="hero-cinematic__bg-wrapper">
+      <picture id="heroBgPicture">
+        <source media="(max-width: 768px)" srcset="assets/images/hero/villa_mobile_view.avif" type="image/avif" id="heroBgMobileAvif">
+        <source media="(max-width: 768px)" srcset="assets/images/hero/villa_mobile_view.webp" type="image/webp" id="heroBgMobileWebp">
+        <source srcset="assets/images/hero/villa_desktop_view.avif" type="image/avif" id="heroBgDesktopAvif">
+        <source srcset="assets/images/hero/villa_desktop_view.webp" type="image/webp" id="heroBgDesktopWebp">
+        <img src="assets/images/hero/villa_desktop_view.webp" id="heroBgImg" alt="Premium Home Interiors" class="hero-cinematic__bg-img" loading="eager">
+      </picture>
+      <div class="hero-cinematic__overlay"></div>
+    </div>
 
-          <div class="hero__cta">
-            <button class="btn btn-primary" data-modal-trigger>Book Free Consultation</button>
-            <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
-          </div>
-        </div>
-        
-        <!-- Right Column: Premium showcase image replacing blank space -->
-        <div class="hero__image-col">
-          <div class="hero__image-wrapper">
-            <video autoplay muted loop playsinline poster="assets/images/portfolio/img_23.jpg" class="hero__image hero__video">
-              <source src="assets/video/hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="hero__image-overlay"></div>
-          </div>
+    <div class="hero-cinematic__container container">
+      <!-- Left Side: Frosted Glass Content Card with Category Switcher -->
+      <div class="hero-glass-card reveal-up">
+        <!-- Interactive Category Switcher Pills -->
+        <div class="hero-category-pills">
+          <button class="hero-pill active"
+            data-category="living"
+            data-desktop-avif="assets/images/hero/villa_desktop_view.avif"
+            data-desktop-webp="assets/images/hero/villa_desktop_view.webp"
+            data-mobile-avif="assets/images/hero/villa_mobile_view.avif"
+            data-mobile-webp="assets/images/hero/villa_mobile_view.webp"
+            data-before-avif="assets/images/hero/After_Bedroom_image.avif"
+            data-before-webp="assets/images/hero/After_Bedroom_image.webp"
+            data-after-avif="assets/images/hero/Before_Bedroom_image.avif"
+            data-after-webp="assets/images/hero/Before_Bedroom_image.webp"
+          >Living Room</button>
+          <button class="hero-pill"
+            data-category="kitchen"
+            data-desktop-avif="assets/images/hero/Modular_Kitchen_Desktop_view.avif"
+            data-desktop-webp="assets/images/hero/Modular_Kitchen_Desktop_view.webp"
+            data-mobile-avif="assets/images/hero/Modular_Kitchen_Mobile_view.avif"
+            data-mobile-webp="assets/images/hero/Modular_Kitchen_Mobile_view.webp"
+            data-before-avif="assets/images/hero/After_Bedroom_image.avif"
+            data-before-webp="assets/images/hero/After_Bedroom_image.webp"
+            data-after-avif="assets/images/hero/Before_Bedroom_image.avif"
+            data-after-webp="assets/images/hero/Before_Bedroom_image.webp"
+          >Modular Kitchen</button>
+          <button class="hero-pill"
+            data-category="bedroom"
+            data-desktop-avif="assets/images/hero/Bedroom_Desktop_view.avif"
+            data-desktop-webp="assets/images/hero/Bedroom_Desktop_view.webp"
+            data-mobile-avif="assets/images/hero/Bedroom_Mobile_view.avif"
+            data-mobile-webp="assets/images/hero/Bedroom_Mobile_view.webp"
+            data-before-avif="assets/images/hero/After_Bedroom_image.avif"
+            data-before-webp="assets/images/hero/After_Bedroom_image.webp"
+            data-after-avif="assets/images/hero/Before_Bedroom_image.avif"
+            data-after-webp="assets/images/hero/Before_Bedroom_image.webp"
+          >Bedroom</button>
+          <button class="hero-pill"
+            data-category="office"
+            data-desktop-avif="assets/images/hero/Office_Desktop_view.avif"
+            data-desktop-webp="assets/images/hero/Office_Desktop_view.webp"
+            data-mobile-avif="assets/images/hero/Office_Mobile_view.avif"
+            data-mobile-webp="assets/images/hero/Office_Mobile_view.webp"
+            data-before-avif="assets/images/hero/After_Bedroom_image.avif"
+            data-before-webp="assets/images/hero/After_Bedroom_image.webp"
+            data-after-avif="assets/images/hero/Before_Bedroom_image.avif"
+            data-after-webp="assets/images/hero/Before_Bedroom_image.webp"
+          >Office</button>
         </div>
 
+        <h1 class="hero-glass-title">Premium Home Interiors Ready In 40 Days</h1>
+        <p class="hero-glass-subtitle">Transform your home with stunning designs, expert craftsmanship, and on-time delivery. Experience luxury interiors without the wait.</p>
+
+        <div class="hero-glass-actions">
+          <button class="btn btn-primary hero-btn-cta" data-modal-trigger>GET FREE ESTIMATE</button>
+        </div>
+
+        <div class="hero-glass-footer">
+          <div class="hero-rating-box">
+            <span class="hero-stars">★★★★★</span>
+            <span class="hero-rating-text"><strong>4.9/5</strong> | 1200+ Happy Homeowners</span>
+          </div>
+          <div class="hero-avatar-stack">
+            <div class="hero-avatar" style="background-color: #214099;">RS</div>
+            <div class="hero-avatar" style="background-color: #F26522;">MK</div>
+            <div class="hero-avatar" style="background-color: #ED1C24;">AR</div>
+            <div class="hero-avatar" style="background-color: #2e7d32;">PV</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Bottom-Right Overlapping Before & After Drag Slider Card -->
+      <div class="hero-before-after-card reveal-up">
+        <div class="hero-ba-header">
+          <span class="hero-ba-title">Real Transformation</span>
+        </div>
+        <div class="before-after-slider" id="heroBaSlider">
+          <div class="ba-image ba-image--before">
+            <picture id="heroBeforePicture">
+              <source srcset="assets/images/hero/After_Bedroom_image.avif" type="image/avif" id="heroBeforeAvif">
+              <source srcset="assets/images/hero/After_Bedroom_image.webp" type="image/webp" id="heroBeforeWebp">
+              <img src="assets/images/hero/After_Bedroom_image.webp" id="heroBeforeImg" alt="Before Interior Transformation">
+            </picture>
+          </div>
+          <div class="ba-image ba-image--after" id="heroAfterWrapper">
+            <picture id="heroAfterPicture">
+              <source srcset="assets/images/hero/Before_Bedroom_image.avif" type="image/avif" id="heroAfterAvif">
+              <source srcset="assets/images/hero/Before_Bedroom_image.webp" type="image/webp" id="heroAfterWebp">
+              <img src="assets/images/hero/Before_Bedroom_image.webp" id="heroAfterImg" alt="After Interior Transformation">
+            </picture>
+          </div>
+          <span class="ba-label ba-label--before">Before</span>
+          <span class="ba-label ba-label--after">After</span>
+          <div class="ba-handle" id="heroBaHandle">
+            <div class="ba-handle-line"></div>
+            <div class="ba-handle-circle">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+            <div class="ba-handle-line"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- 7. Process Flow (40 Working Days & D'LIFE Style SVGs) -->
-  <section id="process" class="process-flow section-padding">
+  <!-- 7. Process Flow (40 Working Days & D'LIFE Style SVGs - Adapted Top Padding) -->
+  <section id="process" class="process-flow section-padding process-flow--hero-adapted">
     <div class="process-flow__container container">
       <!-- changed from 45 to 40 working days -->
       <h2 class="section-title text-center reveal-up">
-        PROJECT COMPLETION IN <span class="highlight">40</span> WORKING DAYS*
+        Project Completion in <span class="highlight">40</span> Working Days*
       </h2>
       <p class="section-subtitle text-center reveal-up">Our structured approach ensures precision, quality, and timely handover for your dream home.</p>
       
@@ -495,7 +544,7 @@
   <section id="capabilities" class="accordion-section section-padding">
     <div class="accordion-section__container container">
       <!-- Eyebrow and subtitle removed as requested -->
-      <h2 class="section-title reveal-up">Our Comprehensive Design Scope</h2>
+      <h2 class="section-title text-center reveal-up">Our Comprehensive Design Scope</h2>
       
       <div class="accordion">
         <!-- Accordion Item 1 (Open by Default) -->
@@ -726,7 +775,7 @@
   <!-- 10. Gallery / Portfolio Section -->
   <section id="portfolio" class="gallery">
     <div class="gallery__header container">
-      <h2 class="section-title reveal-up">Our Premium Projects</h2>
+      <h2 class="section-title text-center reveal-up">Our Premium Projects</h2>
       <p class="section-subtitle reveal-up">A curated selection of our residential and commercial design completions in Chennai & Vellore.</p>
     </div>
     
@@ -806,6 +855,159 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 10B. Success Stories Section (Horizontal Slider matching invertase.io) -->
+  <section id="success-stories" class="invertase-stories-section">
+    <div class="container">
+      <div class="invertase-stories-header text-center">
+        <h2 class="invertase-stories-title text-center">Success Stories</h2>
+        <p class="invertase-stories-subtitle text-center">Explore how we've transformed interior experiences across Vellore &amp; Chennai.</p>
+      </div>
+
+      <!-- Horizontal Card Track -->
+      <div class="invertase-stories-wrapper" id="storiesWrapper">
+        <div class="invertase-stories-track" id="invertaseStoriesTrack">
+          
+          <!-- Story Card 1 -->
+          <div class="inv-card active" data-index="0">
+            <div class="inv-card-bg" style="background-image: url('assets/images/portfolio/img_1.jpg');"></div>
+            <div class="inv-card-overlay"></div>
+            <div class="inv-card-content">
+              <div class="inv-card-top">
+                <div class="inv-brand-badge">
+                  <span class="inv-brand-icon">S</span>
+                  <span class="inv-brand-name">Royal Villa, Katpadi</span>
+                </div>
+                <div class="inv-card-graphic">
+                  <div class="inv-graphic-circle"></div>
+                </div>
+              </div>
+              <div class="inv-card-bottom">
+                <h3 class="inv-card-title">Modern Luxury Villa Transformation</h3>
+                <a href="contact.html" class="inv-read-link">Read case study &rsaquo;</a>
+              </div>
+              <div class="inv-progress-bar">
+                <div class="inv-progress-fill"></div>
+              </div>
+            </div>
+            <div class="inv-card-collapsed">
+              <span class="inv-collapsed-logo">SHREE VILLA</span>
+            </div>
+          </div>
+
+          <!-- Story Card 2 -->
+          <div class="inv-card" data-index="1">
+            <div class="inv-card-bg" style="background-image: url('assets/images/portfolio/img_15.jpg');"></div>
+            <div class="inv-card-overlay"></div>
+            <div class="inv-card-content">
+              <div class="inv-card-top">
+                <div class="inv-brand-badge">
+                  <span class="inv-brand-icon">K</span>
+                  <span class="inv-brand-name">Gourmet Kitchen, Gandhi Nagar</span>
+                </div>
+                <div class="inv-card-graphic">
+                  <div class="inv-graphic-circle"></div>
+                </div>
+              </div>
+              <div class="inv-card-bottom">
+                <h3 class="inv-card-title">Contemporary Parallel Acrylic Kitchen</h3>
+                <a href="contact.html" class="inv-read-link">Read case study &rsaquo;</a>
+              </div>
+              <div class="inv-progress-bar">
+                <div class="inv-progress-fill"></div>
+              </div>
+            </div>
+            <div class="inv-card-collapsed">
+              <span class="inv-collapsed-logo">KITCHEN SUITE</span>
+            </div>
+          </div>
+
+          <!-- Story Card 3 -->
+          <div class="inv-card" data-index="2">
+            <div class="inv-card-bg" style="background-image: url('assets/images/portfolio/img_3.jpg');"></div>
+            <div class="inv-card-overlay"></div>
+            <div class="inv-card-content">
+              <div class="inv-card-top">
+                <div class="inv-brand-badge">
+                  <span class="inv-brand-icon">B</span>
+                  <span class="inv-brand-name">Master Suite, Anna Nagar</span>
+                </div>
+                <div class="inv-card-graphic">
+                  <div class="inv-graphic-circle"></div>
+                </div>
+              </div>
+              <div class="inv-card-bottom">
+                <h3 class="inv-card-title">Serene Minimalist Master Bedroom</h3>
+                <a href="contact.html" class="inv-read-link">Read case study &rsaquo;</a>
+              </div>
+              <div class="inv-progress-bar">
+                <div class="inv-progress-fill"></div>
+              </div>
+            </div>
+            <div class="inv-card-collapsed">
+              <span class="inv-collapsed-logo">BEDROOM SUITE</span>
+            </div>
+          </div>
+
+          <!-- Story Card 4 -->
+          <div class="inv-card" data-index="3">
+            <div class="inv-card-bg" style="background-image: url('assets/images/portfolio/img_24.jpg');"></div>
+            <div class="inv-card-overlay"></div>
+            <div class="inv-card-content">
+              <div class="inv-card-top">
+                <div class="inv-brand-badge">
+                  <span class="inv-brand-icon">L</span>
+                  <span class="inv-brand-name">Living Room, Sathuvachari</span>
+                </div>
+                <div class="inv-card-graphic">
+                  <div class="inv-graphic-circle"></div>
+                </div>
+              </div>
+              <div class="inv-card-bottom">
+                <h3 class="inv-card-title">Opulent Living Room &amp; CNC False Ceiling</h3>
+                <a href="contact.html" class="inv-read-link">Read case study &rsaquo;</a>
+              </div>
+              <div class="inv-progress-bar">
+                <div class="inv-progress-fill"></div>
+              </div>
+            </div>
+            <div class="inv-card-collapsed">
+              <span class="inv-collapsed-logo">LIVING ROOM</span>
+            </div>
+          </div>
+
+          <!-- Story Card 5 -->
+          <div class="inv-card" data-index="4">
+            <div class="inv-card-bg" style="background-image: url('assets/images/portfolio/img_18.jpg');"></div>
+            <div class="inv-card-overlay"></div>
+            <div class="inv-card-content">
+              <div class="inv-card-top">
+                <div class="inv-brand-badge">
+                  <span class="inv-brand-icon">D</span>
+                  <span class="inv-brand-name">Penthouse Dining, Adyar</span>
+                </div>
+                <div class="inv-card-graphic">
+                  <div class="inv-graphic-circle"></div>
+                </div>
+              </div>
+              <div class="inv-card-bottom">
+                <h3 class="inv-card-title">Luxury Onyx Marble Penthouse Dining</h3>
+                <a href="contact.html" class="inv-read-link">Read case study &rsaquo;</a>
+              </div>
+              <div class="inv-progress-bar">
+                <div class="inv-progress-fill"></div>
+              </div>
+            </div>
+            <div class="inv-card-collapsed">
+              <span class="inv-collapsed-logo">DINING SUITE</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -893,75 +1095,175 @@
     </div>
   </section>
 
-  <!-- 12. Testimonials Section (Re-structured to premium 1-slide row with prev/next circular arrows) -->
-  <section id="testimonials" class="testimonials section-padding">
-    <div class="testimonials__container container">
-      <h2 class="section-title text-center reveal-up">What Our Clients Say</h2>
-      <p class="section-subtitle text-center reveal-up">Client satisfaction is our ultimate goal. Here are reviews from individuals and businesses we have served.</p>
-      
-      <!-- [PLACEHOLDER — replace with real client testimonials] -->
-      <div class="testimonials__slider-wrapper">
-        <!-- Circular Prev Button (Outline circle) -->
-        <button class="testimonials__nav-btn testimonials__nav-btn--prev" id="testPrev" aria-label="Previous Testimonial">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
-          </svg>
-        </button>
+  <!-- 12. Client Testimonials (Stacking Cards Layout - Demo-1 Style) -->
+  <section id="testimonials" class="stacking-testimonials-section section-padding">
+    <div class="container">
+      <div class="stacking-header text-center reveal-up">
+        <span class="stacking-eyebrow">Client Showcases & Reviews</span>
+        <h2 class="section-title text-center">What Our Clients Say</h2>
+        <p class="section-subtitle text-center">Explore real transformations and experiences from homeowners and businesses we have served in Vellore & Chennai.</p>
+        <div class="stacking-cards-container container">
         
-        <div class="testimonials__slider">
-          <div class="testimonials__track" id="testimonialsTrack">
-            <!-- Slide 1 -->
-            <div class="testimonials__slide testimonials__slide--active">
-              <span class="testimonials__quote-icon">“</span>
-              <p class="testimonials__quote">"Shree Interior transformed our kitchen beyond our imagination. The attention to detail and quality of materials exceeded all expectations. The soft-close cabinets function beautifully even after years."</p>
-              <div class="testimonials__author">Ranganathan Sundaram</div>
-              <div class="testimonials__role">Homeowner, Vellore</div>
-              <div class="testimonials__stars">★★★★★</div>
+        <!-- Card 1 -->
+        <div class="stack-card stack-card--1" style="--card-index: 0;">
+          <div class="stack-card__inner">
+            <div class="stack-card__header">
+              <div class="stack-card__meta">
+                <span class="stack-card__number">01</span>
+                <div class="stack-card__info">
+                  <span class="stack-card__category">Modular Kitchen & Dining</span>
+                  <h3 class="stack-card__title">Ranganathan Sundaram</h3>
+                  <span class="stack-card__subtitle">Homeowner, Katpadi, Vellore</span>
+                </div>
+              </div>
+              <div class="stack-card__rating">
+                <span class="stack-card__stars">★★★★★</span>
+                <span class="stack-card__score">5.0 Verified Review</span>
+              </div>
             </div>
-            
-            <!-- Slide 2 -->
-            <div class="testimonials__slide">
-              <span class="testimonials__quote-icon">“</span>
-              <p class="testimonials__quote">"Our office redesign has completely revitalized our workspace. The team was professional and delivered on time. They integrated our brand identity perfectly into the reception area."</p>
-              <div class="testimonials__author">Meera Krishnan</div>
-              <div class="testimonials__role">Operations Manager, Chennai</div>
-              <div class="testimonials__stars">★★★★★</div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="testimonials__slide">
-              <span class="testimonials__quote-icon">“</span>
-              <p class="testimonials__quote">"Their attention to detail with the false ceiling and warm lighting design transformed our apartment completely. The orange and blue branding accents they added were subtle yet highly sophisticated. Highly recommend their services."</p>
-              <div class="testimonials__author">Anand Rajan</div>
-              <div class="testimonials__role">Apartment Owner, Egmore</div>
-              <div class="testimonials__stars">★★★★★</div>
-            </div>
-            
-            <!-- Slide 4 -->
-            <div class="testimonials__slide">
-              <span class="testimonials__quote-icon">“</span>
-              <p class="testimonials__quote">"From design consultation to final handover, Shree Interior made the entire process seamless and stress-free. Punctual, responsive, and highly skilled craftsmen."</p>
-              <div class="testimonials__author">Priya Venkatesh</div>
-              <div class="testimonials__role">Homeowner, Vellore</div>
-              <div class="testimonials__stars">★★★★★</div>
+
+            <div class="stack-card__body">
+              <div class="stack-card__col stack-card__col--left">
+                <div class="stack-card__hero-wrapper">
+                  <img src="assets/images/portfolio/img_9.jpg" alt="Modular Kitchen Showcase" class="stack-card__hero-img" loading="lazy">
+                </div>
+              </div>
+
+              <div class="stack-card__col stack-card__col--right">
+                <div class="stack-card__quote-card">
+                  <div class="stack-card__quote-content">
+                    <div class="stack-card__quote-icon">“</div>
+                    <p class="stack-card__quote-text">"Shree Interior transformed our kitchen beyond our imagination. The attention to detail and quality of materials exceeded all expectations. The soft-close cabinets function beautifully even after years of daily use."</p>
+                  </div>
+                  <div class="stack-card__thumb-wrapper">
+                    <img src="assets/images/portfolio/img_6.jpg" alt="Modular Kitchen Detail" class="stack-card__thumb-img" loading="lazy">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <!-- Circular Next Button (Solid orange circle) -->
-        <button class="testimonials__nav-btn testimonials__nav-btn--next" id="testNext" aria-label="Next Testimonial">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </button>
-      </div>
-      
-      <!-- Testimonials Indicator Dots -->
-      <div class="testimonials__dots" id="testimonialsDots">
-        <span class="testimonials__dot testimonials__dot--active"></span>
-        <span class="testimonials__dot"></span>
-        <span class="testimonials__dot"></span>
-        <span class="testimonials__dot"></span>
+
+        <!-- Card 2 -->
+        <div class="stack-card stack-card--2" style="--card-index: 1;">
+          <div class="stack-card__inner">
+            <div class="stack-card__header">
+              <div class="stack-card__meta">
+                <span class="stack-card__number">02</span>
+                <div class="stack-card__info">
+                  <span class="stack-card__category">Commercial & Executive Office</span>
+                  <h3 class="stack-card__title">Meera Krishnan</h3>
+                  <span class="stack-card__subtitle">Operations Manager, Egmore, Chennai</span>
+                </div>
+              </div>
+              <div class="stack-card__rating">
+                <span class="stack-card__stars">★★★★★</span>
+                <span class="stack-card__score">5.0 Verified Review</span>
+              </div>
+            </div>
+
+            <div class="stack-card__body">
+              <div class="stack-card__col stack-card__col--left">
+                <div class="stack-card__hero-wrapper">
+                  <img src="assets/images/portfolio/img_27.jpg" alt="Executive Office Showcase" class="stack-card__hero-img" loading="lazy">
+                </div>
+              </div>
+
+              <div class="stack-card__col stack-card__col--right">
+                <div class="stack-card__quote-card">
+                  <div class="stack-card__quote-content">
+                    <div class="stack-card__quote-icon">“</div>
+                    <p class="stack-card__quote-text">"Our office redesign has completely revitalized our workspace. The team was professional and delivered right on time. They integrated our brand identity perfectly into the reception area."</p>
+                  </div>
+                  <div class="stack-card__thumb-wrapper">
+                    <img src="assets/images/portfolio/img_16.jpg" alt="Office Lounge Detail" class="stack-card__thumb-img" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="stack-card stack-card--3" style="--card-index: 2;">
+          <div class="stack-card__inner">
+            <div class="stack-card__header">
+              <div class="stack-card__meta">
+                <span class="stack-card__number">03</span>
+                <div class="stack-card__info">
+                  <span class="stack-card__category">Luxury Apartment & False Ceiling</span>
+                  <h3 class="stack-card__title">Anand Rajan</h3>
+                  <span class="stack-card__subtitle">Apartment Owner, Ethiraj Salai, Chennai</span>
+                </div>
+              </div>
+              <div class="stack-card__rating">
+                <span class="stack-card__stars">★★★★★</span>
+                <span class="stack-card__score">5.0 Verified Review</span>
+              </div>
+            </div>
+
+            <div class="stack-card__body">
+              <div class="stack-card__col stack-card__col--left">
+                <div class="stack-card__hero-wrapper">
+                  <img src="assets/images/portfolio/img_8.jpg" alt="False Ceiling Showcase" class="stack-card__hero-img" loading="lazy">
+                </div>
+              </div>
+
+              <div class="stack-card__col stack-card__col--right">
+                <div class="stack-card__quote-card">
+                  <div class="stack-card__quote-content">
+                    <div class="stack-card__quote-icon">“</div>
+                    <p class="stack-card__quote-text">"Their attention to detail with the false ceiling and warm lighting design transformed our apartment completely. The orange and blue branding accents they added were subtle yet highly sophisticated."</p>
+                  </div>
+                  <div class="stack-card__thumb-wrapper">
+                    <img src="assets/images/portfolio/img_15.jpg" alt="Apartment Living Detail" class="stack-card__thumb-img" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="stack-card stack-card--4" style="--card-index: 3;">
+          <div class="stack-card__inner">
+            <div class="stack-card__header">
+              <div class="stack-card__meta">
+                <span class="stack-card__number">04</span>
+                <div class="stack-card__info">
+                  <span class="stack-card__category">Complete Villa Makeover</span>
+                  <h3 class="stack-card__title">Priya Venkatesh</h3>
+                  <span class="stack-card__subtitle">Villa Owner, Gandhi Nagar, Vellore</span>
+                </div>
+              </div>
+              <div class="stack-card__rating">
+                <span class="stack-card__stars">★★★★★</span>
+                <span class="stack-card__score">5.0 Verified Review</span>
+              </div>
+            </div>
+
+            <div class="stack-card__body">
+              <div class="stack-card__col stack-card__col--left">
+                <div class="stack-card__hero-wrapper">
+                  <img src="assets/images/portfolio/img_1.jpg" alt="Master Bedroom Villa Showcase" class="stack-card__hero-img" loading="lazy">
+                </div>
+              </div>
+
+              <div class="stack-card__col stack-card__col--right">
+                <div class="stack-card__quote-card">
+                  <div class="stack-card__quote-content">
+                    <div class="stack-card__quote-icon">“</div>
+                    <p class="stack-card__quote-text">"From design consultation to final handover, Shree Interior made the entire process seamless and stress-free. Punctual, responsive, and highly skilled craftsmen who delivered our dream home right on schedule."</p>
+                  </div>
+                  <div class="stack-card__thumb-wrapper">
+                    <img src="assets/images/portfolio/img_14.jpg" alt="Villa Interior Detail" class="stack-card__thumb-img" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1089,32 +1391,117 @@
     </div>
   </section>
 
-  <!-- 15. CTA Band -->
+  <!-- 15. CTA Band & Office Locations -->
   <section class="cta-band">
-    <div class="cta-band__container container">
-      <div class="cta-band__content">
-        <h2>Let's Design Your Creative Space</h2>
-        <p>Get in touch with our design experts today to schedule a free, no-obligation interior design consultation.</p>
-        <button class="btn btn-primary" data-modal-trigger>Book Free Consultation</button>
+    <div class="container">
+      <div class="cta-band__header text-center reveal-up">
+        <h2 class="cta-band__title">Design Studios & Office Locations</h2>
+        <p class="cta-band__subtitle">Visit our experience centers in Vellore and Chennai or connect with our design experts.</p>
       </div>
+
       <div class="cta-band__maps">
-        <div class="cta-band__map-card">
-          <span class="cta-band__map-title">Vellore Head Office</span>
+        <!-- Office 1: Vellore Head Office -->
+        <div class="cta-band__map-card reveal-up">
           <iframe 
             class="cta-band__iframe" 
-            src="https://maps.google.com/maps?q=NO:38/48,%20Katpadi%20Main%20Road,%20Thirunagar,%20Vellore%20632006&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            src="https://maps.google.com/maps?q=NO:38/48,%20Katpadi%20Main%20Road,%20Thirunagar,%20Vellore%20632006&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             allowfullscreen="" 
-            loading="lazy">
+            loading="lazy"
+            title="Shree Interior Vellore Head Office Map">
           </iframe>
+
+          <div class="cta-band__card-info">
+            <div class="cta-band__card-header">
+              <span class="cta-band__badge">HEAD OFFICE</span>
+              <h3 class="cta-band__office-name">Vellore Head Office</h3>
+            </div>
+            
+            <div class="cta-band__address-box">
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>NO:38/48, Katpadi Main Road, Thirunagar, Vellore – 632006</span>
+              </p>
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span><strong>Tel:</strong> <a href="tel:04162248327">0416-2248327</a> | <a href="tel:919600228269">+91 96002 28269</a></span>
+              </p>
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Mon - Sat: 10:00 AM – 7:00 PM</span>
+              </p>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=NO:38/48,+Katpadi+Main+Road,+Thirunagar,+Vellore+632006" target="_blank" rel="noopener" class="cta-band__directions-btn">
+              <span>Get Directions</span> &rsaquo;
+            </a>
+          </div>
         </div>
-        <div class="cta-band__map-card">
-          <span class="cta-band__map-title">Chennai Branch Office</span>
+
+        <!-- Office 2: Chennai Branch Office -->
+        <div class="cta-band__map-card reveal-up">
           <iframe 
             class="cta-band__iframe" 
-            src="https://maps.google.com/maps?q=G-2%20Wellington%20Estate,%20NO:53%20Ethiraj%20Salai,%20Egmore,%20Chennai%20600008&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            src="https://maps.google.com/maps?q=G-2%20Wellington%20Estate,%20NO:53%20Ethiraj%20Salai,%20Egmore,%20Chennai%20600008&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             allowfullscreen="" 
-            loading="lazy">
+            loading="lazy"
+            title="Shree Interior Chennai Branch Office Map">
           </iframe>
+
+          <div class="cta-band__card-info">
+            <div class="cta-band__card-header">
+              <span class="cta-band__badge">BRANCH OFFICE</span>
+              <h3 class="cta-band__office-name">Chennai Branch Office</h3>
+            </div>
+            
+            <div class="cta-band__address-box">
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>G-2 Wellington Estate, NO:53 Ethiraj Salai, Egmore, Chennai – 600008</span>
+              </p>
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span><strong>Tel:</strong> <a href="tel:04428222200">044-28222200</a> | <a href="tel:919600228269">+91 96002 28269</a></span>
+              </p>
+              <p class="cta-band__address-line">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Mon - Sat: 10:00 AM – 7:00 PM</span>
+              </p>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=G-2+Wellington+Estate,+NO:53+Ethiraj+Salai,+Egmore,+Chennai+600008" target="_blank" rel="noopener" class="cta-band__directions-btn">
+              <span>Get Directions</span> &rsaquo;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15.5 Partner With Us Section (Interactive Image Trail) -->
+  <section class="partner-section" id="partner-with-us">
+    <div class="container">
+      <div class="partner-card reveal-up" id="partnerCard">
+        <!-- Cursor Trail Thumbnails Container -->
+        <div class="partner-trail-container" id="partnerTrail"></div>
+
+        <!-- Content -->
+        <div class="partner-content">
+          <span class="partner-tag">Expert Interior Guidance</span>
+          <h2 class="partner-title text-center">Ready to Transform Your Dream Space?</h2>
+          <p class="partner-description">Schedule a 1-on-1 session with our senior interior designers. Discuss your space requirements, material choices, budget estimates, and get personalized 3D design concepts with zero obligation.</p>
+          
+          <button class="partner-cta-btn" data-modal-trigger>
+            <div class="partner-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <span>Book Free Consultation</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="partner-btn-arrow">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1122,17 +1509,16 @@
 
   </main>
 
-  <!-- 16. Footer (Timeline footnote appended at bottom) -->
+  <!-- 16. Footer -->
   <footer class="footer" id="footer">
-    <div class="footer__top container">
-      <!-- Logo removed in footer as requested -->
-      <p class="footer__tagline" style="font-size: 1.15rem; font-weight: 600; letter-spacing: 1px;">Your Creative Space...</p>
-    </div>
-    
     <div class="footer__grid container">
-      <!-- Col 1 Offices -->
+      <!-- Col 1 Offices & Tagline -->
       <div class="footer__col footer__offices">
-        <h3 class="footer__heading">Our Offices</h3>
+        <div class="footer__brand-head">
+          <h3 class="footer__heading" style="margin-bottom: 2px;">Shree Interior</h3>
+          <p class="footer__tagline" style="font-size: 0.9rem; font-style: italic; color: rgba(255, 255, 255, 0.6); margin-bottom: 18px;">Your Creative Space...</p>
+        </div>
+        <h4 style="color: #ffffff; font-size: 0.95rem; font-weight: 700; margin-bottom: 10px;">Our Offices</h4>
         <p class="footer__office-item">
           <strong>Vellore Head Office:</strong><br>
           NO:38/48, Katpadi Main Road, Thirunagar,<br>
@@ -1215,11 +1601,6 @@
       </div>
     </div>
     
-    <!-- Relocated timeline footnote here -->
-    <div class="footer__footnote container text-center">
-      <p>*Timeline may vary based on project scope, layout complexity, and material selections.</p>
-    </div>
-    
     <div class="footer__bottom container">
       <div class="footer__bottom-flex">
         <p>© 2026 Shree Interior. All rights reserved. | Designed with ♥ for your dream spaces.</p>
@@ -1229,6 +1610,7 @@
           <a href="disclaimer.html">Disclaimer</a>
         </div>
       </div>
+      <p class="footer__timeline-note">*Timeline may vary based on project scope, layout complexity, and material selections.</p>
     </div>
   </footer>
 

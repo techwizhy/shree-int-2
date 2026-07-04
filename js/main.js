@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileMenu();
   initCustomCursor();
+  initHeroCinematic();
   initProcessFlow();
   initAccordion();
   initGalleryDrag();
@@ -18,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initPromoPopup(); // Bottom Popup trigger
   initStatsCounter();
   initTestimonialsSlider();
+  initPartnerTrail();
+  initStackingCards();
+  initSuccessStoriesAccordion();
 });
 
 /* ------------------------------------------------------------
@@ -684,4 +688,366 @@ function initRevealOnScroll() {
 
   revealElements.forEach(el => observer.observe(el));
 }
+
+/* ------------------------------------------------------------
+   16. Partner With Us Interactive Image Trail
+   ------------------------------------------------------------ */
+function initPartnerTrail() {
+  const container = document.getElementById('partnerCard');
+  const trailBox = document.getElementById('partnerTrail');
+  if (!container || !trailBox) return;
+
+  const images = [
+    'assets/images/portfolio/img_1.jpg',
+    'assets/images/portfolio/img_2.jpg',
+    'assets/images/portfolio/img_3.jpg',
+    'assets/images/portfolio/img_4.jpg',
+    'assets/images/portfolio/img_5.jpg',
+    'assets/images/portfolio/img_6.jpg',
+    'assets/images/portfolio/img_7.jpg',
+    'assets/images/portfolio/img_8.jpg',
+    'assets/images/portfolio/img_9.jpg',
+    'assets/images/portfolio/img_10.jpg',
+    'assets/images/portfolio/img_11.jpg',
+    'assets/images/portfolio/img_12.jpg',
+    'assets/images/portfolio/img_13.jpg',
+    'assets/images/portfolio/img_14.jpg',
+    'assets/images/portfolio/img_15.jpg',
+    'assets/images/portfolio/img_16.jpg'
+  ];
+
+  let trail = [];
+  let lastSpawnTime = 0;
+  let imageIndex = 0;
+  let animId = null;
+
+  function animateTrail() {
+    const now = Date.now();
+    trail = trail.filter(item => {
+      const age = now - item.createdAt;
+      if (age >= 1000) {
+        if (item.el && item.el.parentNode) {
+          item.el.parentNode.removeChild(item.el);
+        }
+        return false;
+      }
+      const progress = Math.min(1, age / 1000);
+      const opacity = 1 - progress;
+      const scale = 1 - progress * 0.35;
+      if (item.el) {
+        item.el.style.opacity = opacity;
+        item.el.style.transform = `translate(-50%, -50%) rotate(${item.rotation}deg) scale(${scale})`;
+      }
+      return true;
+    });
+
+    if (trail.length > 0) {
+      animId = requestAnimationFrame(animateTrail);
+    } else {
+      animId = null;
+    }
+  }
+
+  container.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastSpawnTime < 80) return;
+    lastSpawnTime = now;
+
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const imgUrl = images[imageIndex % images.length];
+    imageIndex++;
+
+    const rotation = (Math.random() - 0.5) * 24;
+    const imgEl = document.createElement('img');
+    imgEl.src = imgUrl;
+    imgEl.alt = 'Shree Interior Portfolio';
+    imgEl.className = 'partner-trail-item';
+    imgEl.style.left = `${x}px`;
+    imgEl.style.top = `${y}px`;
+    imgEl.style.transform = `translate(-50%, -50%) rotate(${rotation}deg) scale(1)`;
+    imgEl.style.opacity = '1';
+
+    trailBox.appendChild(imgEl);
+
+    trail.push({
+      el: imgEl,
+      rotation: rotation,
+      createdAt: now
+    });
+
+    if (!animId) {
+      animId = requestAnimationFrame(animateTrail);
+    }
+  });
+}
+
+/* ------------------------------------------------------------
+   17. Stacking Cards Transform & Opacity Animation (Demo-1 Formula)
+   ------------------------------------------------------------ */
+function initStackingCards() {
+  const cards = document.querySelectorAll('.stack-card');
+  if (!cards.length) return;
+
+  const totalCards = cards.length;
+
+  const updateCardTransforms = () => {
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const nextCard = cards[index + 1];
+      if (nextCard) {
+        const nextRect = nextCard.getBoundingClientRect();
+        const cardHeight = rect.height || 600;
+        const overlap = Math.max(0, rect.bottom - nextRect.top);
+        const progress = Math.min(1, Math.max(0, overlap / cardHeight));
+
+        const maxScaleReduction = (totalCards - 1 - index) * 0.03;
+        const currentScale = 1 - progress * maxScaleReduction;
+
+        card.style.transform = `scale(${currentScale})`;
+      } else {
+        card.style.transform = 'scale(1)';
+      }
+    });
+  };
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateCardTransforms);
+  }, { passive: true });
+
+  updateCardTransforms();
+}
+
+/* ------------------------------------------------------------
+   Success Stories Horizontal Slider (Invertase.io replica)
+   ------------------------------------------------------------ */
+function initSuccessStoriesAccordion() {
+  const track = document.getElementById('invertaseStoriesTrack');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.inv-card');
+  let currentIndex = 0;
+  let autoPlayInterval = null;
+
+  function setActiveCard(index) {
+    currentIndex = index;
+    cards.forEach((card, i) => {
+      if (i === index) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // Auto scroll track horizontally to center active card
+    const wrapper = document.getElementById('storiesWrapper');
+    if (wrapper && cards[index]) {
+      const cardOffset = cards[index].offsetLeft;
+      const cardWidth = cards[index].offsetWidth;
+      const wrapperWidth = wrapper.offsetWidth;
+      const scrollPos = cardOffset - (wrapperWidth / 2) + (cardWidth / 2);
+      wrapper.scrollTo({
+        left: Math.max(0, scrollPos),
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  // Hover and Click events for cards
+  cards.forEach((card, i) => {
+    card.addEventListener('mouseenter', () => {
+      stopAutoPlay();
+      setActiveCard(i);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      startAutoPlay();
+    });
+
+    card.addEventListener('click', () => {
+      setActiveCard(i);
+    });
+  });
+
+  // Auto Play every 4 seconds
+  function startAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % cards.length;
+      setActiveCard(nextIndex);
+    }, 4000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+  }
+
+  startAutoPlay();
+}
+
+/* ------------------------------------------------------------
+   Hero Cinematic Category Switcher & Before/After Slider
+   ------------------------------------------------------------ */
+function initHeroCinematic() {
+  const pills = document.querySelectorAll('.hero-pill');
+
+  // Background <picture> sources
+  const heroBgMobileAvif = document.getElementById('heroBgMobileAvif');
+  const heroBgMobileWebp = document.getElementById('heroBgMobileWebp');
+  const heroBgDesktopAvif = document.getElementById('heroBgDesktopAvif');
+  const heroBgDesktopWebp = document.getElementById('heroBgDesktopWebp');
+  const heroBgImg = document.getElementById('heroBgImg');
+
+  // Before <picture> sources
+  const heroBeforeAvif = document.getElementById('heroBeforeAvif');
+  const heroBeforeWebp = document.getElementById('heroBeforeWebp');
+  const heroBeforeImg = document.getElementById('heroBeforeImg');
+
+  // After <picture> sources
+  const heroAfterAvif = document.getElementById('heroAfterAvif');
+  const heroAfterWebp = document.getElementById('heroAfterWebp');
+  const heroAfterImg = document.getElementById('heroAfterImg');
+
+  // Slider elements
+  const slider = document.getElementById('heroBaSlider');
+  const afterWrapper = document.getElementById('heroAfterWrapper');
+  const handle = document.getElementById('heroBaHandle');
+
+  // Category Switcher Pill Handler
+  if (pills.length && heroBgImg) {
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        // Read all data attributes from the clicked pill
+        const deskAvif = pill.getAttribute('data-desktop-avif');
+        const deskWebp = pill.getAttribute('data-desktop-webp');
+        const mobAvif = pill.getAttribute('data-mobile-avif');
+        const mobWebp = pill.getAttribute('data-mobile-webp');
+        const beforeAvif = pill.getAttribute('data-before-avif');
+        const beforeWebp = pill.getAttribute('data-before-webp');
+        const afterAvif = pill.getAttribute('data-after-avif');
+        const afterWebp = pill.getAttribute('data-after-webp');
+
+        // Phase 1: Cinematic fade-out (scale 1.00 → 1.02, opacity 1 → 0)
+        heroBgImg.classList.remove('hero-fade-in-end');
+        heroBgImg.classList.add('hero-fade-out');
+
+        setTimeout(() => {
+          // Swap all <source> srcsets for the hero background
+          if (heroBgMobileAvif && mobAvif) heroBgMobileAvif.srcset = mobAvif;
+          if (heroBgMobileWebp && mobWebp) heroBgMobileWebp.srcset = mobWebp;
+          if (heroBgDesktopAvif && deskAvif) heroBgDesktopAvif.srcset = deskAvif;
+          if (heroBgDesktopWebp && deskWebp) heroBgDesktopWebp.srcset = deskWebp;
+          if (heroBgImg && deskWebp) heroBgImg.src = deskWebp;
+
+          // Phase 2a: Instantly set incoming start state (scale 1.04, opacity 0)
+          heroBgImg.classList.remove('hero-fade-out');
+          heroBgImg.classList.add('hero-fade-in-start');
+
+          // Force reflow so browser registers the start state before transitioning
+          void heroBgImg.offsetWidth;
+
+          // Phase 2b: Cinematic fade-in (scale 1.04 → 1.00, opacity 0 → 1)
+          heroBgImg.classList.remove('hero-fade-in-start');
+          heroBgImg.classList.add('hero-fade-in-end');
+        }, 350);
+
+        // Update Before <picture> sources
+        if (heroBeforeAvif && beforeAvif) heroBeforeAvif.srcset = beforeAvif;
+        if (heroBeforeWebp && beforeWebp) heroBeforeWebp.srcset = beforeWebp;
+        if (heroBeforeImg && beforeWebp) heroBeforeImg.src = beforeWebp;
+
+        // Update After <picture> sources
+        if (heroAfterAvif && afterAvif) heroAfterAvif.srcset = afterAvif;
+        if (heroAfterWebp && afterWebp) heroAfterWebp.srcset = afterWebp;
+        if (heroAfterImg && afterWebp) heroAfterImg.src = afterWebp;
+        // Reset auto-rotate timer on manual click
+        resetAutoRotate();
+      });
+    });
+
+    // Auto-rotate through category pills every 4 seconds
+    let autoRotateInterval = null;
+    let autoRotateTimeout = null;
+    let currentPillIndex = 0;
+
+    function autoRotateNext() {
+      currentPillIndex = (currentPillIndex + 1) % pills.length;
+      pills[currentPillIndex].click();
+    }
+
+    function startAutoRotate() {
+      if (autoRotateInterval) clearInterval(autoRotateInterval);
+      autoRotateInterval = setInterval(autoRotateNext, 4000);
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateInterval) clearInterval(autoRotateInterval);
+      autoRotateInterval = null;
+    }
+
+    function resetAutoRotate() {
+      stopAutoRotate();
+      // Find current active pill index
+      pills.forEach((p, i) => { if (p.classList.contains('active')) currentPillIndex = i; });
+      // Resume auto-rotate after 8 seconds of inactivity
+      if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+      autoRotateTimeout = setTimeout(startAutoRotate, 8000);
+    }
+
+    // Start auto-rotate on page load
+    startAutoRotate();
+  }
+
+  // Draggable Before/After Slider Handler
+  if (slider && afterWrapper && handle) {
+    let isDragging = false;
+
+    function setSliderPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let offsetX = x - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+
+      const percentage = (offsetX / rect.width) * 100;
+      afterWrapper.style.width = percentage + '%';
+      handle.style.left = percentage + '%';
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+  }
+}
+
+
+
 
